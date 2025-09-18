@@ -378,9 +378,12 @@ type Row = {
   async function renderLoop() {
     // 每 2 秒刷新一次
     while (true) {
+      const headTitles = ['交易所','类型','合约','最新','涨跌(24h)','成交额(5m)','成交额(30m)','成交额(24h)','未平仓(张)','资金费率','倒计时','本地时间'];
+      const headCells: any = headTitles.map(t => ({ content: t, hAlign: 'center' }));
       const table = new Table({
-        head: ['交易所','类型','合约','最新','涨跌(24h)','成交额(5m)','成交额(30m)','成交额(24h)','未平仓(张)','资金费率','倒计时','本地时间'],
-        style: { head: ['cyan'] }, colAligns: ['left','left','left','right','right','right','right','right','right','right','right','right']
+        head: headCells as any,
+        style: { head: ['cyan'] },
+        colAligns: ['left','left','left','right','right','right','right','right','right','right','right','right']
       });
       const fmtM = (v?: number) => {
         if (typeof v !== 'number' || !isFinite(v)) return '';
