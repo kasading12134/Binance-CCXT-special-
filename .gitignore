@@ -14,3 +14,4 @@ coverage/
 # Editors/IDE
 .idea/
 .vscode/
+!.env.example
