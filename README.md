@@ -1,4 +1,5 @@
 # CCXT WebSocket 监控（Binance 专用）
+## Thanks CCXT 
 
 一个基于 Node.js 的终端行情监控工具，支持 Binance 现货、USDM 永续、COINM 永续，使用原生 WebSocket 保证“实时”行情；REST 仅用于数据回补（24h 统计、OI、资金费率、分钟K线）。
 
